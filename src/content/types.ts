@@ -78,6 +78,7 @@ export interface FaqItem {
 }
 
 export interface FaqBlock {
+  eyebrow: string;
   h2: string;
   items: FaqItem[];
 }

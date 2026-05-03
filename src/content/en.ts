@@ -103,6 +103,7 @@ export const en: Content = {
     },
   },
   faq: {
+    eyebrow: 'FAQ',
     h2: 'Frequently asked questions',
     items: [
       {
