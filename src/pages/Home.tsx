@@ -54,12 +54,12 @@ export default function Home({ t, heroRef }: HomeProps) {
           <Treatments t={t} />
         </div>
       </section>
-      <section id="faq">
+      <section className="alt" id="faq">
         <div className="container">
           <Faq t={t} />
         </div>
       </section>
-      <section className="alt" id="practical">
+      <section id="practical">
         <div className="container">
           <p className="eyebrow">{t.practical.eyebrow}</p>
           <h2>{t.practical.h2}</h2>
@@ -69,7 +69,7 @@ export default function Home({ t, heroRef }: HomeProps) {
           </div>
         </div>
       </section>
-      <section id="contact">
+      <section className="alt" id="contact">
         <div className="container">
           <ContactRow t={t} />
         </div>
