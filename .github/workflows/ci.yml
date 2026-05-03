@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches-ignore: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Type-check
+        run: pnpm tsc --noEmit
+
+      - name: Build
+        run: pnpm build
+
+      - name: 200-line budget
+        run: |
+          set -eu
+          fail=0
+          while IFS= read -r f; do
+            n=$(wc -l < "$f")
+            if [ "$n" -gt 200 ] && [ "$f" != "./LICENSE" ]; then
+              echo "OVER  $n  $f"
+              fail=1
+            fi
+          done < <(find ./src ./docs ./README.md ./CONTRIBUTING.md ./CLAUDE.md \
+                        ./SECURITY.md \
+                        -type f \( -name '*.ts' -o -name '*.tsx' \
+                                  -o -name '*.css' -o -name '*.html' \
+                                  -o -name '*.md' \) 2>/dev/null)
+          exit $fail
+
+      - name: No-gradient guard
+        run: |
+          if grep -RInE 'linear-gradient|radial-gradient|conic-gradient' src/styles 2>/dev/null; then
+            echo "::error::Gradient found in src/styles. Solid fills only."
+            exit 1
+          fi

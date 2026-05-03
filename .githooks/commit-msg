@@ -1,0 +1,25 @@
+#!/bin/sh
+set -eu
+
+MSG=$(cat "$1")
+
+# Allow merge commits and revert commits to bypass the pattern.
+case "$MSG" in
+  Merge*|Revert*) exit 0 ;;
+esac
+
+PATTERN='^(feat|fix|chore|docs|style|refactor|test|ci|build|perf|revert)(\(.+\))?: .+'
+
+if ! echo "$MSG" | grep -qE "$PATTERN"; then
+  cat >&2 <<'EOF'
+ERROR: commit message must follow Conventional Commits.
+
+  <type>(<optional scope>): <description>
+
+  Allowed types: feat | fix | chore | docs | style | refactor
+                 test | ci   | build | perf  | revert
+
+  Example: feat: add lang switcher to site header
+EOF
+  exit 1
+fi

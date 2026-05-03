@@ -1,0 +1,19 @@
+#!/bin/sh
+# Pre-commit smoke check: type-check + build.
+# If pnpm isn't available yet (pre-scaffold), exit 0 so the first commit goes through.
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  echo "pre-commit: pnpm not found, skipping smoke check (likely pre-scaffold)."
+  exit 0
+fi
+
+if [ ! -f package.json ]; then
+  echo "pre-commit: no package.json yet, skipping smoke check."
+  exit 0
+fi
+
+pnpm tsc --noEmit
+pnpm build

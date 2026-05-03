@@ -1,0 +1,28 @@
+# dependencies & build
+node_modules/
+dist/
+.cache/
+.parcel-cache/
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.log
+
+# project-specific reference material — never committed
+# Lovable preview mirror, used only for design extraction
+booking-ease-connect/
+# scraped content reference
+docs/_live-site.html
+# optional humanizer delta notes
+docs/_humanize-notes.md
+# auth cookies of any kind
+cookies.txt
+*.cookies
