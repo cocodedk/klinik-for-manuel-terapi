@@ -34,6 +34,13 @@ export default function App({ lang }: AppProps) {
       document.head.appendChild(meta);
     }
     meta.content = t.description;
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const links: [string, string][] = [['da', `${base}/`], ['en', `${base}/en/`], ['x-default', `${base}/`]];
+    for (const [hl, href] of links) {
+      let l = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hl}"]`);
+      if (!l) { l = document.createElement('link'); l.rel = 'alternate'; l.hreflang = hl; document.head.appendChild(l); }
+      l.href = href;
+    }
   }, [lang, t.title, t.description]);
 
   return (

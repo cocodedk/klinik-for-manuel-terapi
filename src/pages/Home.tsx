@@ -43,23 +43,23 @@ export default function Home({ t, heroRef }: HomeProps) {
           <HeroCard t={t} />
         </div>
       </section>
-      <section className="alt" id="om">
+      <section className="alt" id="about">
         <div className="container">
           <AboutBlock t={t} />
         </div>
       </section>
-      <section id="behandling">
+      <section id="treatments">
         <div className="container">
           <Treatments t={t} />
         </div>
       </section>
-      <section className="alt" id="praktisk">
+      <section className="alt" id="practical">
         <div className="container cols-2">
           <PracticalAddress t={t} />
           <HoursTable t={t} />
         </div>
       </section>
-      <section id="kontakt">
+      <section id="contact">
         <div className="container">
           <ContactRow t={t} />
         </div>
