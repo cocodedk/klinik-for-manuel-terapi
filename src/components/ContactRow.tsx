@@ -9,7 +9,6 @@ export default function ContactRow({ t }: ContactRowProps) {
   const { cta, h2 } = t.contactBlock;
   return (
     <>
-      <p className="eyebrow">{cta.bookLabel}</p>
       <h2>{h2}</h2>
       <div className="contact-row">
         <CtaButtons cta={cta} />

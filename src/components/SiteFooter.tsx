@@ -1,5 +1,6 @@
 import type { RefObject } from 'react';
 import type { Content } from '../content/types';
+import { MapPinIcon } from './icons';
 
 export interface SiteFooterProps {
   t: Content;
@@ -7,13 +8,24 @@ export interface SiteFooterProps {
 }
 
 export default function SiteFooter({ t, footerRef }: SiteFooterProps) {
-  const { lines, photoCredit } = t.footer;
+  const { brandLine, address, mapHref, contactLine, cvrLine, photoCredit } = t.footer;
   return (
     <footer className="site-footer" ref={footerRef}>
       <div className="container">
-        {lines.map((line) => (
-          <p key={line}>{line}</p>
-        ))}
+        <p>{brandLine}</p>
+        <p>
+          <a
+            className="footer-map"
+            href={mapHref}
+            target="_blank"
+            rel="noopener"
+          >
+            <MapPinIcon />
+            <span>{address}</span>
+          </a>
+        </p>
+        <p>{contactLine}</p>
+        <p>{cvrLine}</p>
         <p>
           {photoCredit.prefix}{' '}
           <a

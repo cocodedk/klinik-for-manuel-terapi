@@ -90,11 +90,11 @@ export const da: Content = {
     cta,
   },
   footer: {
-    lines: [
-      'Klinik for Manuel Terapi · Martensens Allé 12, kld. · 1828 Frederiksberg C',
-      'Telefon +45 51 52 96 20 · omidirnadk@gmail.com',
-      'CVR 36 22 09 45',
-    ],
+    brandLine: 'Klinik for Manuel Terapi',
+    address: 'Martensens Allé 12, kld. · 1828 Frederiksberg C',
+    mapHref: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
+    contactLine: 'Telefon +45 51 52 96 20 · omidirnadk@gmail.com',
+    cvrLine: 'CVR 36 22 09 45',
     photoCredit: {
       prefix: 'Foto:',
       photographer: 'Toa Heftiba',

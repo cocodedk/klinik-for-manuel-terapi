@@ -94,3 +94,15 @@ section.alt { background: var(--soft); }
 }
 .site-footer a { color: var(--bg); }
 .site-footer p { margin-block-end: var(--space-2); }
+.footer-map {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: .375rem .875rem;
+  border-radius: var(--radius-pill);
+  background: hsl(0 0% 100% / .08);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  text-decoration: none;
+}
+.footer-map svg { color: var(--accent); flex: 0 0 auto; }

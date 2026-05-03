@@ -1,6 +1,7 @@
 import type { Content } from '../content/types';
 import CtaButtons from './CtaButtons';
 import RatingChip from './RatingChip';
+import { MapPinIcon } from './icons';
 
 export interface HeroCardProps {
   t: Content;
@@ -18,7 +19,15 @@ export default function HeroCard({ t }: HeroCardProps) {
       <div className="cta-row">
         <CtaButtons cta={cta} />
       </div>
-      <p className="meta">{hero.metaLine}</p>
+      <a
+        className="hero-map"
+        href={rating.href}
+        target="_blank"
+        rel="noopener"
+      >
+        <MapPinIcon />
+        <span>{hero.metaLine}</span>
+      </a>
     </div>
   );
 }

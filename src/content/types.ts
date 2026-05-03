@@ -68,7 +68,11 @@ export interface PhotoCredit {
 }
 
 export interface FooterBlock {
-  lines: string[];
+  brandLine: string;
+  address: string;
+  mapHref: string;
+  contactLine: string;
+  cvrLine: string;
   photoCredit: PhotoCredit;
 }
 

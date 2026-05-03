@@ -18,19 +18,14 @@
 .btn--primary {
   background: var(--brand);
   color: var(--bg);
-}
-.btn--primary:hover,
-.btn--primary:focus-visible {
-  background: var(--brand-2);
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-1);
 }
 .btn--ghost {
-  background: transparent;
+  background: var(--surface);
   color: var(--ink);
   border-color: var(--line);
+  box-shadow: var(--shadow-1);
 }
-.btn--ghost:hover,
-.btn--ghost:focus-visible { background: var(--soft); }
 .btn--block { width: 100%; justify-content: center; }
 .btn--icon {
   width: 56px;
@@ -101,9 +96,23 @@
   gap: var(--space-4);
   margin-block-start: var(--space-2);
 }
-.hero-card .meta {
-  font-size: var(--fs-sm);
-  color: var(--muted);
+.hero-card .hero-map {
+  display: inline-flex;
+  align-items: center;
+  justify-self: center;
+  gap: var(--space-2);
+  padding: .625rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--shadow-1);
+}
+.hero-card .hero-map svg {
+  color: var(--brand);
+  flex: 0 0 auto;
 }
 
 /* Treatment list */
