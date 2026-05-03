@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html dist/404.html && mkdir -p dist/en && cp dist/index.html dist/en/index.html",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
