@@ -41,7 +41,7 @@ jobs:
           fi
 
       - if: steps.check.outputs.ready == 'true'
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
         # version comes from package.json "packageManager" field
 
       - if: steps.check.outputs.ready == 'true'
