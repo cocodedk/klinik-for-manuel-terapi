@@ -29,7 +29,8 @@
   color: var(--ink);
   border-color: var(--line);
 }
-.btn--ghost:hover { background: var(--soft); }
+.btn--ghost:hover,
+.btn--ghost:focus-visible { background: var(--soft); }
 .btn--block { width: 100%; justify-content: center; }
 .btn--icon {
   width: 56px;
