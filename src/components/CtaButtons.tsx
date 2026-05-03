@@ -1,5 +1,6 @@
 import type { CtaTriple } from '../content/types';
 import Button from './Button';
+import { PhoneIcon, MailIcon } from './icons';
 
 export interface CtaButtonsProps {
   cta: CtaTriple;
@@ -18,17 +19,19 @@ export default function CtaButtons({ cta }: CtaButtonsProps) {
       </Button>
       <Button
         variant="ghost"
+        iconOnly
         href={`tel:${cta.phoneE164}`}
         ariaLabel={`${cta.phoneLabel} ${cta.phoneDisplay}`}
       >
-        {cta.phoneLabel}
+        <PhoneIcon />
       </Button>
       <Button
         variant="ghost"
+        iconOnly
         href={`mailto:${cta.email}`}
         ariaLabel={`${cta.emailLabel} ${cta.email}`}
       >
-        {cta.emailLabel}
+        <MailIcon />
       </Button>
     </>
   );

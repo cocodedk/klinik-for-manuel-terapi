@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 export interface ButtonProps {
   variant?: 'primary' | 'ghost';
   block?: boolean;
+  iconOnly?: boolean;
   href?: string;
   target?: string;
   rel?: string;
@@ -15,11 +16,12 @@ export interface ButtonProps {
  * tel:, mailto:), so a `<button>` branch isn't needed yet.
  */
 export default function Button(props: ButtonProps) {
-  const { variant = 'primary', block, href, target, rel, ariaLabel, children } = props;
+  const { variant = 'primary', block, iconOnly, href, target, rel, ariaLabel, children } = props;
   const cls = [
     'btn',
     variant === 'primary' ? 'btn--primary' : 'btn--ghost',
     block ? 'btn--block' : '',
+    iconOnly ? 'btn--icon' : '',
   ]
     .filter(Boolean)
     .join(' ');
