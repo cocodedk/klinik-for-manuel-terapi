@@ -49,7 +49,7 @@ const treatments: TreatmentItem[] = [
 
 export const en: Content = {
   langCode: 'en',
-  title: 'Klinik for Manuel Terapi · Frederiksberg',
+  title: 'Manual Therapy Frederiksberg | Klinik for Manuel Terapi',
   description:
     'Manual therapy, body therapy, and pain science in Frederiksberg, Copenhagen. Book online. ★ 4.9 on Google.',
   ogImage: '/img/og.jpg',
@@ -61,9 +61,9 @@ export const en: Content = {
   hero: {
     eyebrow: 'Frederiksberg · Manual therapy',
     deco: 'Movement',
-    h1: 'Klinik for Manuel Terapi',
+    h1: 'Klinik for Manuel Terapi – Frederiksberg C',
     lead: 'Effective treatment for tension, locked joints, and pain in the body.',
-    metaLine: 'Martensens Allé 12, basement · 1828 Frederiksberg C',
+    metaLine: 'Open until 8 pm · Gift cards · Martensens Allé 12, basement · 1828 Frederiksberg C',
   },
   about: {
     eyebrow: 'About the clinic',
@@ -101,6 +101,27 @@ export const en: Content = {
       photographerHref: 'https://unsplash.com/@heftiba',
       suffix: 'on Unsplash · © 2026',
     },
+  },
+  faq: {
+    h2: 'Frequently asked questions',
+    items: [
+      {
+        question: 'Do I need a referral?',
+        answer: 'No – you can book directly without a GP or insurance referral.',
+      },
+      {
+        question: 'What does manual therapy treat?',
+        answer: 'Manual therapy addresses tension, restricted joints, and musculoskeletal pain using precise hands-on techniques, mobilisation, and exercises – no medication.',
+      },
+      {
+        question: 'Do you offer gift cards?',
+        answer: 'Yes – gift cards are available. Contact the clinic to find out more.',
+      },
+      {
+        question: 'What happens at the first visit?',
+        answer: 'We start with a thorough conversation about your symptoms and movement patterns. We then treat, and you leave with specific exercises to do at home.',
+      },
+    ],
   },
   cta,
 };

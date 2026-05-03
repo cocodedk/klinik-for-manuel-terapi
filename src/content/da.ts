@@ -49,7 +49,7 @@ const treatments: TreatmentItem[] = [
 
 export const da: Content = {
   langCode: 'da',
-  title: 'Klinik for Manuel Terapi · Frederiksberg',
+  title: 'Manuel Terapi Frederiksberg | Klinik for Manuel Terapi',
   description:
     'Manuel terapi, kropsterapi og smertevidenskab i Frederiksberg. Bestil tid online. ★ 4.9 på Google.',
   ogImage: '/img/og.jpg',
@@ -61,9 +61,9 @@ export const da: Content = {
   hero: {
     eyebrow: 'Frederiksberg · Manuel terapi',
     deco: 'Bevægelse',
-    h1: 'Klinik for Manuel Terapi',
+    h1: 'Klinik for Manuel Terapi – Frederiksberg C',
     lead: 'Effektiv behandling der hjælper dig af med spændinger, låste led og smerter i kroppen.',
-    metaLine: 'Martensens Allé 12, kld. · 1828 Frederiksberg C',
+    metaLine: 'Åbent til kl. 20 · Gavekort · Martensens Allé 12, kld. · 1828 Frederiksberg C',
   },
   about: {
     eyebrow: 'Om klinikken',
@@ -101,6 +101,27 @@ export const da: Content = {
       photographerHref: 'https://unsplash.com/@heftiba',
       suffix: 'på Unsplash · © 2026',
     },
+  },
+  faq: {
+    h2: 'Ofte stillede spørgsmål',
+    items: [
+      {
+        question: 'Skal jeg have en henvisning?',
+        answer: 'Nej – du kan bestille tid direkte uden lægehenvisning eller forsikringshenvisning.',
+      },
+      {
+        question: 'Hvad arbejder manuel terapi med?',
+        answer: 'Manuel terapi behandler spændinger, låste led og smerter i bevægeapparatet ved hjælp af præcise håndgreb, mobilisering og øvelser – uden medicin.',
+      },
+      {
+        question: 'Tilbyder I gavekort?',
+        answer: 'Ja – gavekort er tilgængeligt. Kontakt klinikken for at høre mere.',
+      },
+      {
+        question: 'Hvad sker der til første besøg?',
+        answer: 'Vi starter med en grundig samtale om dine symptomer og bevægemønstre. Derefter behandler vi, og du får konkrete øvelser med hjem.',
+      },
+    ],
   },
   cta,
 };

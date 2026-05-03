@@ -72,6 +72,16 @@ export interface FooterBlock {
   photoCredit: PhotoCredit;
 }
 
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface FaqBlock {
+  h2: string;
+  items: FaqItem[];
+}
+
 export interface Content {
   langCode: LangCode;
   title: string;
@@ -84,5 +94,6 @@ export interface Content {
   practical: PracticalBlock;
   contactBlock: ContactBlock;
   footer: FooterBlock;
+  faq: FaqBlock;
   cta: CtaTriple;
 }
