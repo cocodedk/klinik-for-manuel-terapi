@@ -1,7 +1,3 @@
-// Danish content for the landing page. Strings sourced verbatim from
-// docs/content-da.md; numbers + URLs locked by docs/spec.md §9.
-// Plan 09 may humanize wording; identifiers, hours, and contact data stay.
-
 import type { Content, CtaTriple, HoursRow, TreatmentItem } from './types';
 
 const cta: CtaTriple = {
@@ -53,9 +49,6 @@ const treatments: TreatmentItem[] = [
 
 export const da: Content = {
   langCode: 'da',
-  altHref: '/en/',
-  altLangCode: 'en',
-  altLabel: 'EN',
   title: 'Klinik for Manuel Terapi · Frederiksberg',
   description:
     'Manuel terapi, kropsterapi og smertevidenskab i Frederiksberg. Bestil tid online. ★ 4.9 på Google.',
@@ -103,9 +96,10 @@ export const da: Content = {
       'CVR 36 22 09 45',
     ],
     photoCredit: {
-      text: 'Foto: Toa Heftiba på Unsplash · © 2026',
+      prefix: 'Foto:',
       photographer: 'Toa Heftiba',
       photographerHref: 'https://unsplash.com/@heftiba',
+      suffix: 'på Unsplash · © 2026',
     },
   },
   cta,

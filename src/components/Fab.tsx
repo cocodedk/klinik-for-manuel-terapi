@@ -1,13 +1,9 @@
 import type { RefObject } from 'react';
+import type { CtaTriple } from '../content/types';
 import { useScrollVisibility } from '../hooks/useScrollVisibility';
 
 export interface FabProps {
-  bookingUrl: string;
-  bookingLabel: string;
-  phoneE164: string;
-  phoneLabel: string;
-  email: string;
-  emailLabel: string;
+  cta: CtaTriple;
   heroRef: RefObject<HTMLElement | null>;
   footerRef: RefObject<HTMLElement | null>;
 }
@@ -49,37 +45,34 @@ function MailIcon() {
   );
 }
 
-export function Fab(props: FabProps) {
-  const visible = useScrollVisibility({
-    heroRef: props.heroRef,
-    footerRef: props.footerRef,
-  });
+export function Fab({ cta, heroRef, footerRef }: FabProps) {
+  const visible = useScrollVisibility({ heroRef, footerRef });
 
   return (
     <div
-      className={`fab ${visible ? 'is-visible' : ''}`}
+      className={visible ? 'fab is-visible' : 'fab'}
       aria-hidden={visible ? undefined : true}
     >
       <a
         className="fab__btn fab__btn--primary"
-        href={props.bookingUrl}
+        href={cta.bookHref}
         target="_blank"
         rel="noopener"
       >
         <CalendarIcon />
-        <span>{props.bookingLabel}</span>
+        <span>{cta.bookLabel}</span>
       </a>
       <a
         className="fab__btn fab__btn--icon"
-        href={`tel:${props.phoneE164}`}
-        aria-label={props.phoneLabel}
+        href={`tel:${cta.phoneE164}`}
+        aria-label={cta.phoneLabel}
       >
         <PhoneIcon />
       </a>
       <a
         className="fab__btn fab__btn--icon"
-        href={`mailto:${props.email}`}
-        aria-label={props.emailLabel}
+        href={`mailto:${cta.email}`}
+        aria-label={cta.emailLabel}
       >
         <MailIcon />
       </a>

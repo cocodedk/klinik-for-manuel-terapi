@@ -1,5 +1,5 @@
 import type { Content } from '../content/types';
-import Button from './Button';
+import CtaButtons from './CtaButtons';
 import RatingChip from './RatingChip';
 
 export interface HeroCardProps {
@@ -16,28 +16,7 @@ export default function HeroCard({ t }: HeroCardProps) {
       <p className="lead">{hero.lead}</p>
       <div className="cta-row">
         <RatingChip rating={rating} />
-        <Button
-          variant="primary"
-          href={cta.bookHref}
-          target="_blank"
-          rel="noopener"
-        >
-          {cta.bookLabel}
-        </Button>
-        <Button
-          variant="ghost"
-          href={`tel:${cta.phoneE164}`}
-          ariaLabel={`${cta.phoneLabel} ${cta.phoneDisplay}`}
-        >
-          {cta.phoneLabel}
-        </Button>
-        <Button
-          variant="ghost"
-          href={`mailto:${cta.email}`}
-          ariaLabel={`${cta.emailLabel} ${cta.email}`}
-        >
-          {cta.emailLabel}
-        </Button>
+        <CtaButtons cta={cta} />
       </div>
       <p className="meta">{hero.metaLine}</p>
     </div>

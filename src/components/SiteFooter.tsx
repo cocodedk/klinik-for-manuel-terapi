@@ -6,10 +6,6 @@ export interface SiteFooterProps {
   footerRef: RefObject<HTMLElement | null>;
 }
 
-/**
- * Footer. The ref is forwarded to the raw <footer> so the FAB hook can
- * observe it via IntersectionObserver and hide the cluster on approach.
- */
 export default function SiteFooter({ t, footerRef }: SiteFooterProps) {
   const { lines, photoCredit } = t.footer;
   return (
@@ -19,7 +15,7 @@ export default function SiteFooter({ t, footerRef }: SiteFooterProps) {
           <p key={line}>{line}</p>
         ))}
         <p>
-          Foto:{' '}
+          {photoCredit.prefix}{' '}
           <a
             href={photoCredit.photographerHref}
             target="_blank"
@@ -27,7 +23,7 @@ export default function SiteFooter({ t, footerRef }: SiteFooterProps) {
           >
             {photoCredit.photographer}
           </a>
-          {' '}på Unsplash · © 2026
+          {' '}{photoCredit.suffix}
         </p>
       </div>
     </footer>

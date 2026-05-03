@@ -12,13 +12,12 @@ interface AppProps {
   lang: Lang;
 }
 
-/**
- * Route shell: picks the localized content object, syncs <html lang>,
- * <title>, and meta description, and wires the parallax + sticky header
- * + sticky FAB cluster + footer with refs for the visibility observer.
- * vite-react-ssg + a Helmet integration land in plan 10; for now the
- * meta is set at runtime only (good enough until prerender ships).
- */
+const HREFLANGS: [string, string][] = [
+  ['da', '/'],
+  ['en', '/en/'],
+  ['x-default', '/'],
+];
+
 export default function App({ lang }: AppProps) {
   const t = lang === 'da' ? da : en;
   const heroRef = useRef<HTMLElement>(null);
@@ -34,15 +33,18 @@ export default function App({ lang }: AppProps) {
       document.head.appendChild(meta);
     }
     meta.content = t.description;
-    const origin = typeof window !== 'undefined' ? window.location.origin : '';
-    const base = origin + import.meta.env.BASE_URL.replace(/\/$/, '');
-    const links: [string, string][] = [['da', `${base}/`], ['en', `${base}/en/`], ['x-default', `${base}/`]];
-    for (const [hl, href] of links) {
+    const base = window.location.origin + import.meta.env.BASE_URL.replace(/\/$/, '');
+    for (const [hl, path] of HREFLANGS) {
       let l = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hl}"]`);
-      if (!l) { l = document.createElement('link'); l.rel = 'alternate'; l.hreflang = hl; document.head.appendChild(l); }
-      l.href = href;
+      if (!l) {
+        l = document.createElement('link');
+        l.rel = 'alternate';
+        l.hreflang = hl;
+        document.head.appendChild(l);
+      }
+      l.href = base + path;
     }
-  }, [lang, t.title, t.description]);
+  }, [lang, t]);
 
   return (
     <>
@@ -53,16 +55,7 @@ export default function App({ lang }: AppProps) {
         <Home t={t} heroRef={heroRef} />
       </main>
       <SiteFooter t={t} footerRef={footerRef} />
-      <Fab
-        bookingUrl={t.cta.bookHref}
-        bookingLabel={t.cta.bookLabel}
-        phoneE164={t.cta.phoneE164}
-        phoneLabel={t.cta.phoneLabel}
-        email={t.cta.email}
-        emailLabel={t.cta.emailLabel}
-        heroRef={heroRef}
-        footerRef={footerRef}
-      />
+      <Fab cta={t.cta} heroRef={heroRef} footerRef={footerRef} />
     </>
   );
 }
