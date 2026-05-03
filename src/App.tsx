@@ -35,7 +35,8 @@ export default function App({ lang }: AppProps) {
         l.hreflang = hl;
         document.head.appendChild(l);
       }
-      l.href = base + path;
+      const next = base + path;
+      if (l.href !== next) l.href = next;
     }
   }, [lang]);
 
