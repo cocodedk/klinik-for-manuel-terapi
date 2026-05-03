@@ -43,13 +43,17 @@ svg {
   max-width: 100%;
 }
 
+html {
+  background: var(--bg);  /* fallback while .parallax loads */
+}
+
 body {
   min-height: 100svh;
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: var(--lh-body);
   color: var(--ink);
-  background: var(--bg);
+  background: transparent;  /* let .parallax (z-index: -1) show through */
   -webkit-font-smoothing: antialiased;
 }
 
