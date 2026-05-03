@@ -3,7 +3,6 @@ import type { Content } from '../content/types';
 
 interface HeadMetaProps {
   t: Content;
-  lang: string;
 }
 
 const SITE_URL = 'https://cocodedk.github.io/klinik-for-manuel-terapi';
@@ -44,19 +43,18 @@ function setMeta(attr: string, value: string, attrName = 'name') {
     el.setAttribute(attrName, attr);
     document.head.appendChild(el);
   }
-  el.content = value;
+  if (el.content !== value) el.content = value;
 }
 
-export default function HeadMeta({ t, lang }: HeadMetaProps) {
+export default function HeadMeta({ t }: HeadMetaProps) {
   useEffect(() => {
-    document.title = t.title;
+    if (document.title !== t.title) document.title = t.title;
     setMeta('description', t.description);
     setMeta('og:title', t.title, 'property');
     setMeta('og:description', t.description, 'property');
     setMeta('og:type', 'website', 'property');
     setMeta('og:url', window.location.href, 'property');
-    const base = window.location.origin + '/klinik-for-manuel-terapi';
-    setMeta('og:image', base + t.ogImage, 'property');
+    setMeta('og:image', SITE_URL + t.ogImage, 'property');
 
     let ld = document.getElementById('ld-json') as HTMLScriptElement | null;
     if (!ld) {
@@ -65,8 +63,8 @@ export default function HeadMeta({ t, lang }: HeadMetaProps) {
       ld.type = 'application/ld+json';
       document.head.appendChild(ld);
     }
-    ld.textContent = LD_JSON;
-  }, [t, lang]);
+    if (ld.textContent !== LD_JSON) ld.textContent = LD_JSON;
+  }, [t]);
 
   return null;
 }
