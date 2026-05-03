@@ -4,6 +4,7 @@ import { en } from './content/en';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import { Fab } from './components/Fab';
+import HeadMeta from './components/HeadMeta';
 import Home from './pages/Home';
 
 type Lang = 'da' | 'en';
@@ -25,14 +26,6 @@ export default function App({ lang }: AppProps) {
 
   useEffect(() => {
     document.documentElement.lang = lang;
-    document.title = t.title;
-    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      document.head.appendChild(meta);
-    }
-    meta.content = t.description;
     const base = window.location.origin + import.meta.env.BASE_URL.replace(/\/$/, '');
     for (const [hl, path] of HREFLANGS) {
       let l = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hl}"]`);
@@ -44,10 +37,11 @@ export default function App({ lang }: AppProps) {
       }
       l.href = base + path;
     }
-  }, [lang, t]);
+  }, [lang]);
 
   return (
     <>
+      <HeadMeta t={t} />
       <a id="top" />
       <div className="parallax" aria-hidden />
       <SiteHeader t={t} />
