@@ -42,7 +42,7 @@ const treatments: TreatmentItem[] = [
     body: 'Kæbe, nakke, øvre ryg.',
   },
   {
-    title: 'Genoptræning og kropsbevidsthed.',
+    title: 'Genoptræning, kropsbevidsthed.',
     body: 'Øvelser at tage med hjem.',
   },
   {
@@ -58,7 +58,7 @@ export const da: Content = {
   altLabel: 'EN',
   title: 'Klinik for Manuel Terapi · Frederiksberg',
   description:
-    'Manuel terapi, kropsterapi og smertevidenskab i Frederiksberg. Bestil tid online — ★ 4.9 på Google.',
+    'Manuel terapi, kropsterapi og smertevidenskab i Frederiksberg. Bestil tid online. ★ 4.9 på Google.',
   ogImage: '/img/og.jpg',
   rating: {
     value: '4.9',
