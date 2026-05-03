@@ -134,7 +134,8 @@ Apache-2.0 · © 2026 [Cocode](https://cocode.dk) · Created by
 
 ## Credits
 
-- Hero photo: chosen from [Unsplash](https://unsplash.com/) during plan 01;
-  the photographer name and source URL are recorded here once locked.
+- Hero photo: ["Person massaging the back of a woman"](https://unsplash.com/photos/person-massaging-the-back-of-a-woman-hBLf2nvp-Yc)
+  by [Toa Heftiba](https://unsplash.com/@heftiba) on [Unsplash](https://unsplash.com/),
+  used under the [Unsplash License](https://unsplash.com/license).
 - Webfonts: [Newsreader](https://fonts.google.com/specimen/Newsreader) and
   [Manrope](https://fonts.google.com/specimen/Manrope), both OFL, self-hosted.
