@@ -34,7 +34,7 @@ function AboutBlock({ t }: { t: Content }) {
 function PracticalAddress({ t }: { t: Content }) {
   const { address, transport } = t.practical;
   return (
-    <div>
+    <div className="practical-address">
       {address.map((line) => (
         <p key={line}>{line}</p>
       ))}

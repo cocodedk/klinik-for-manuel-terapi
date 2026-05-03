@@ -43,6 +43,7 @@
 .about-education li {
   padding-block: var(--space-2);
   border-block-end: 1px solid var(--line);
+  font-weight: 600;
 }
 .about-sub h3 { margin-block-end: var(--space-2); }
 .about-sub p { color: var(--muted); }

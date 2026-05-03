@@ -23,8 +23,8 @@ export interface RatingChip {
 }
 
 export interface HeroBlock {
-  eyebrow: string;
   h1: string;
+  h1Sub: string;
   lead: string;
   perks: string[];
   metaLine: string;
@@ -67,6 +67,12 @@ export interface PhotoCredit {
   suffix: string;
 }
 
+export interface DesignerCredit {
+  prefix: string;
+  label: string;
+  href: string;
+}
+
 export interface FooterBlock {
   brandLine: string;
   address: string;
@@ -74,6 +80,7 @@ export interface FooterBlock {
   contactLine: string;
   cvrLine: string;
   photoCredit: PhotoCredit;
+  designer: DesignerCredit;
 }
 
 export interface FaqItem {

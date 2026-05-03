@@ -11,8 +11,8 @@ export default function HeroCard({ t }: HeroCardProps) {
   const { hero, rating, cta } = t;
   return (
     <div className="hero-card">
-      <p className="eyebrow">{hero.eyebrow}</p>
       <h1>{hero.h1}</h1>
+      <p className="hero-sub">{hero.h1Sub}</p>
       <p className="lead">{hero.lead}</p>
       <p className="hero-perks">{hero.perks.join(' · ')}</p>
       <RatingChip rating={rating} />

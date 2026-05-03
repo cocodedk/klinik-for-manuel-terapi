@@ -8,7 +8,7 @@ export interface SiteFooterProps {
 }
 
 export default function SiteFooter({ t, footerRef }: SiteFooterProps) {
-  const { brandLine, address, mapHref, contactLine, cvrLine, photoCredit } = t.footer;
+  const { brandLine, address, mapHref, contactLine, cvrLine, photoCredit, designer } = t.footer;
   return (
     <footer className="site-footer" ref={footerRef}>
       <div className="container">
@@ -36,6 +36,12 @@ export default function SiteFooter({ t, footerRef }: SiteFooterProps) {
             {photoCredit.photographer}
           </a>
           {' '}{photoCredit.suffix}
+        </p>
+        <p>
+          {designer.prefix}{' '}
+          <a href={designer.href} target="_blank" rel="noopener">
+            {designer.label}
+          </a>
         </p>
       </div>
     </footer>

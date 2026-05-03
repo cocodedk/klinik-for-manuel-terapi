@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { ScrollRestoration } from 'react-router-dom';
 import { da } from './content/da';
 import { en } from './content/en';
 import SiteHeader from './components/SiteHeader';
@@ -55,6 +56,7 @@ export default function App({ lang, page }: AppProps) {
   return (
     <>
       <HeadMeta t={t} title={headTitle} description={headDesc} ogImage={headOg} />
+      <ScrollRestoration />
       <a id="top" />
       <div className="parallax" aria-hidden />
       <SiteHeader t={t} />

@@ -59,8 +59,8 @@ export const en: Content = {
     href: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
   },
   hero: {
-    eyebrow: 'Frederiksberg · Manual therapy',
-    h1: 'Klinik for Manuel Terapi – Frederiksberg C',
+    h1: 'Klinik for Manuel Terapi',
+    h1Sub: 'Frederiksberg C',
     lead: 'Effective treatment for tension, locked joints, and pain in the body.',
     perks: ['Open until 8 pm', 'Gift cards'],
     metaLine: 'Martensens Allé 12, basement · 1828 Frederiksberg C',
@@ -100,6 +100,11 @@ export const en: Content = {
       photographer: 'Toa Heftiba',
       photographerHref: 'https://unsplash.com/@heftiba',
       suffix: 'on Unsplash · © 2026',
+    },
+    designer: {
+      prefix: 'Designed by',
+      label: 'cocode.dk',
+      href: 'https://cocode.dk',
     },
   },
   aboutPage: {
