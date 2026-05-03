@@ -6,6 +6,7 @@ import Treatments from '../components/Treatments';
 import HoursTable from '../components/HoursTable';
 import ContactRow from '../components/ContactRow';
 import Faq from '../components/Faq';
+import Section from '../components/Section';
 
 export interface HomeProps {
   t: Content;
@@ -45,41 +46,29 @@ function PracticalAddress({ t }: { t: Content }) {
 export default function Home({ t, heroRef }: HomeProps) {
   return (
     <>
-      <section className="hero" ref={heroRef}>
-        <div className="container">
-          <HeroCard t={t} />
+      <Section className="hero" innerRef={heroRef}>
+        <HeroCard t={t} />
+      </Section>
+      <Section alt id="about">
+        <AboutBlock t={t} />
+      </Section>
+      <Section id="treatments">
+        <Treatments t={t} />
+      </Section>
+      <Section alt id="faq">
+        <Faq t={t} />
+      </Section>
+      <Section id="practical">
+        <p className="eyebrow">{t.practical.eyebrow}</p>
+        <h2>{t.practical.h2}</h2>
+        <div className="cols-2">
+          <PracticalAddress t={t} />
+          <HoursTable t={t} />
         </div>
-      </section>
-      <section className="alt" id="about">
-        <div className="container">
-          <AboutBlock t={t} />
-        </div>
-      </section>
-      <section id="treatments">
-        <div className="container">
-          <Treatments t={t} />
-        </div>
-      </section>
-      <section className="alt" id="faq">
-        <div className="container">
-          <Faq t={t} />
-        </div>
-      </section>
-      <section id="practical">
-        <div className="container">
-          <p className="eyebrow">{t.practical.eyebrow}</p>
-          <h2>{t.practical.h2}</h2>
-          <div className="cols-2">
-            <PracticalAddress t={t} />
-            <HoursTable t={t} />
-          </div>
-        </div>
-      </section>
-      <section className="alt" id="contact">
-        <div className="container">
-          <ContactRow t={t} />
-        </div>
-      </section>
+      </Section>
+      <Section alt id="contact">
+        <ContactRow t={t} />
+      </Section>
     </>
   );
 }
