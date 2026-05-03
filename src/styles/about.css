@@ -47,13 +47,7 @@
 }
 .about-sub h3 { margin-block-end: var(--space-2); }
 .about-sub p { color: var(--muted); }
-.read-more {
-  font-weight: 600;
-  color: var(--brand);
-  text-decoration: none;
-}
-.read-more:hover { text-decoration: underline; }
-
+.read-more,
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -61,7 +55,6 @@
   justify-self: start;
   min-height: 44px;
   padding: var(--space-2) var(--space-5);
-  margin-block-start: var(--space-5);
   border-radius: var(--radius-pill);
   background: var(--surface);
   border: 1px solid var(--brand);
@@ -72,6 +65,9 @@
   box-shadow: var(--shadow-1);
   transition: background-color .18s ease, color .18s ease;
 }
+.back-link { margin-block-start: var(--space-5); }
+.read-more:hover,
+.read-more:focus-visible,
 .back-link:hover,
 .back-link:focus-visible {
   background: var(--brand);
