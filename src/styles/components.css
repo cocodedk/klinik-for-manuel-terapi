@@ -71,13 +71,17 @@
 /* Hero block */
 .hero-card {
   position: relative;
-  max-width: 38rem;
+  max-width: 44rem;
   margin-inline: auto;
   display: grid;
   gap: var(--space-4);
   text-align: center;
 }
-.hero-card h1 { letter-spacing: -.01em; margin-block-end: 0; }
+.hero-card h1 {
+  letter-spacing: -.01em;
+  margin-block-end: 0;
+  text-wrap: balance;
+}
 .hero-card .hero-sub {
   font-family: var(--font-display);
   font-style: italic;
