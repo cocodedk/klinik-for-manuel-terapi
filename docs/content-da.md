@@ -70,7 +70,7 @@ finpudset i plan #09. Tal og kontaktdata er låst.
 | Lørdag | Lukket |
 | Søndag | Lukket |
 
-- Note: Bekræft tabellen mod livesitet før udgivelse (plan #06).
+- Tabellen er låst i `docs/spec.md §9`.
 
 ## Kontakt-blok (gentagelse)
 
@@ -85,7 +85,8 @@ finpudset i plan #09. Tal og kontaktdata er låst.
 - Linje 1: `Klinik for Manuel Terapi · Martensens Allé 12, kld. · 1828 Frederiksberg C`
 - Linje 2: `Telefon +45 51 52 96 20 · omidirnadk@gmail.com`
 - Linje 3: `CVR 36 22 09 45`
-- Linje 4 (lille, dæmpet): `Foto: <Fotograf> på Unsplash · © <år>`
+- Linje 4 (lille, dæmpet): `Foto: Toa Heftiba på Unsplash · © 2026`
+  (fotograf-link: `https://unsplash.com/@heftiba`)
 
 ## Tekniske strenge
 
