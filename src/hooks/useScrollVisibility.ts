@@ -3,9 +3,9 @@ import type { RefObject } from 'react';
 
 export interface VisibilityArgs {
   /** ref pointing at the hero section — hide until this is out of view */
-  heroRef: RefObject<HTMLElement>;
+  heroRef: RefObject<HTMLElement | null>;
   /** ref pointing at the footer — re-hide when this enters view */
-  footerRef: RefObject<HTMLElement>;
+  footerRef: RefObject<HTMLElement | null>;
 }
 
 /**

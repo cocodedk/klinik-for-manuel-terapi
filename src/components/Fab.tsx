@@ -8,8 +8,8 @@ export interface FabProps {
   phoneLabel: string;
   email: string;
   emailLabel: string;
-  heroRef: RefObject<HTMLElement>;
-  footerRef: RefObject<HTMLElement>;
+  heroRef: RefObject<HTMLElement | null>;
+  footerRef: RefObject<HTMLElement | null>;
 }
 
 const SVG_PROPS = {
