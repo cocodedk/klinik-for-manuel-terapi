@@ -63,7 +63,8 @@ export const da: Content = {
     deco: 'Bevægelse',
     h1: 'Klinik for Manuel Terapi – Frederiksberg C',
     lead: 'Effektiv behandling der hjælper dig af med spændinger, låste led og smerter i kroppen.',
-    metaLine: 'Åbent til kl. 20 · Gavekort · Martensens Allé 12, kld. · 1828 Frederiksberg C',
+    perks: ['Åbent til kl. 20', 'Gavekort'],
+    metaLine: 'Martensens Allé 12, kld. · 1828 Frederiksberg C',
   },
   about: {
     eyebrow: 'Om klinikken',

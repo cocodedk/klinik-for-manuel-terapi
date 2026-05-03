@@ -63,13 +63,14 @@ export const en: Content = {
     deco: 'Movement',
     h1: 'Klinik for Manuel Terapi – Frederiksberg C',
     lead: 'Effective treatment for tension, locked joints, and pain in the body.',
-    metaLine: 'Open until 8 pm · Gift cards · Martensens Allé 12, basement · 1828 Frederiksberg C',
+    perks: ['Open until 8 pm', 'Gift cards'],
+    metaLine: 'Martensens Allé 12, basement · 1828 Frederiksberg C',
   },
   about: {
     eyebrow: 'About the clinic',
     h2: 'Care you can feel',
     body: [
-      "Omid Hodabakhshi has worked with manual therapy since 2007 and is reading for a Master's in pain science at Aalborg University. Each session is one-to-one. You leave knowing what's happening in your body and what you can do at home before your next visit. No package deals, no follow-ups you didn't ask for.",
+      'Omid Hodabakhshi has worked with manual therapy since 2007 and is reading for a Master’s in pain science at Aalborg University. Each session is one-to-one. You leave knowing what’s happening in your body and what you can do at home before your next visit. No package deals, no follow-ups you didn’t ask for.',
     ],
   },
   treatments: {

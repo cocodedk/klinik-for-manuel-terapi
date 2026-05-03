@@ -14,8 +14,9 @@ export default function HeroCard({ t }: HeroCardProps) {
       <p className="eyebrow">{hero.eyebrow}</p>
       <h1>{hero.h1}</h1>
       <p className="lead">{hero.lead}</p>
+      <p className="hero-perks">{hero.perks.join(' · ')}</p>
+      <RatingChip rating={rating} />
       <div className="cta-row">
-        <RatingChip rating={rating} />
         <CtaButtons cta={cta} />
       </div>
       <p className="meta">{hero.metaLine}</p>

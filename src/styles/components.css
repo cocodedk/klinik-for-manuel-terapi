@@ -36,17 +36,18 @@
 .rating {
   display: inline-flex;
   align-items: center;
+  justify-self: center;
   gap: var(--space-2);
-  padding: .5rem .875rem;
+  padding: .625rem 1.125rem;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-pill);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-body);
   text-decoration: none;
   color: var(--ink);
   box-shadow: var(--shadow-1);
 }
-.rating .star { color: var(--star); font-size: 1rem; }
+.rating .star { color: var(--star); font-size: var(--fs-h3); }
 .rating .score { font-weight: 700; }
 .rating .label { color: var(--muted); }
 
@@ -64,8 +65,10 @@
 .hero-card {
   position: relative;
   max-width: 38rem;
+  margin-inline: auto;
   display: grid;
   gap: var(--space-4);
+  text-align: center;
 }
 .hero-card .deco {
   position: absolute;
@@ -85,10 +88,17 @@
   font-size: 1.125rem;
   color: var(--ink);
   max-width: 32rem;
+  margin-inline: auto;
+}
+.hero-card .hero-perks {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--brand);
 }
 .hero-card .cta-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-3);
   margin-block-start: var(--space-2);
 }

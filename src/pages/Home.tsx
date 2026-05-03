@@ -60,9 +60,13 @@ export default function Home({ t, heroRef }: HomeProps) {
         </div>
       </section>
       <section className="alt" id="practical">
-        <div className="container cols-2">
-          <PracticalAddress t={t} />
-          <HoursTable t={t} />
+        <div className="container">
+          <p className="eyebrow">{t.practical.eyebrow}</p>
+          <h2>{t.practical.h2}</h2>
+          <div className="cols-2">
+            <PracticalAddress t={t} />
+            <HoursTable t={t} />
+          </div>
         </div>
       </section>
       <section id="contact">

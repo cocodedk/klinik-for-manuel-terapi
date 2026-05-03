@@ -27,6 +27,7 @@ export interface HeroBlock {
   deco: string;
   h1: string;
   lead: string;
+  perks: string[];
   metaLine: string;
 }
 
