@@ -4,6 +4,7 @@ import HeroCard from '../components/HeroCard';
 import Treatments from '../components/Treatments';
 import HoursTable from '../components/HoursTable';
 import ContactRow from '../components/ContactRow';
+import Faq from '../components/Faq';
 
 export interface HomeProps {
   t: Content;
@@ -51,6 +52,11 @@ export default function Home({ t, heroRef }: HomeProps) {
       <section id="treatments">
         <div className="container">
           <Treatments t={t} />
+        </div>
+      </section>
+      <section id="faq">
+        <div className="container">
+          <Faq t={t} />
         </div>
       </section>
       <section className="alt" id="practical">
