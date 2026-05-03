@@ -24,7 +24,6 @@ export interface RatingChip {
 
 export interface HeroBlock {
   eyebrow: string;
-  deco: string;
   h1: string;
   lead: string;
   perks: string[];
@@ -84,6 +83,26 @@ export interface FaqBlock {
   items: FaqItem[];
 }
 
+export interface AboutPageSubsection {
+  title: string;
+  body: string;
+}
+
+export interface AboutPageBlock {
+  path: string;
+  title: string;
+  description: string;
+  h1: string;
+  intro: string;
+  imageAlt: string;
+  educationLabel: string;
+  education: string[];
+  body: string[];
+  subsections: AboutPageSubsection[];
+  readMoreLabel: string;
+  backLabel: string;
+}
+
 export interface Content {
   langCode: LangCode;
   title: string;
@@ -97,5 +116,6 @@ export interface Content {
   contactBlock: ContactBlock;
   footer: FooterBlock;
   faq: FaqBlock;
+  aboutPage: AboutPageBlock;
   cta: CtaTriple;
 }

@@ -60,7 +60,6 @@ export const en: Content = {
   },
   hero: {
     eyebrow: 'Frederiksberg · Manual therapy',
-    deco: 'Movement',
     h1: 'Klinik for Manuel Terapi – Frederiksberg C',
     lead: 'Effective treatment for tension, locked joints, and pain in the body.',
     perks: ['Open until 8 pm', 'Gift cards'],
@@ -102,6 +101,45 @@ export const en: Content = {
       photographerHref: 'https://unsplash.com/@heftiba',
       suffix: 'on Unsplash · © 2026',
     },
+  },
+  aboutPage: {
+    path: '/en/about-me',
+    title: 'About me | Omid Hodabakhshi · Klinik for Manuel Terapi',
+    description:
+      'Omid Hodabakhshi · education, approach, and specialties. Manual therapy, body therapy, and pain science in Frederiksberg.',
+    h1: 'Omid Hodabakhshi',
+    intro:
+      'I treat conditions across the entire spine — from the neck to the tailbone.',
+    imageAlt: 'Omid Hodabakhshi at the clinic',
+    educationLabel: 'My education',
+    education: [
+      '2007–2009: ManuVision body therapist',
+      '2014–2016: Doctor-examined back therapist',
+      '2017–2021: European School of Osteopathy (not authorised)',
+      '2021–2022: ManuVision continuing education in Shock/Trauma',
+      '2024–2026: Master’s in Pain Science and Interdisciplinary Pain Management, Aalborg University (expected 2026)',
+    ],
+    body: [
+      'As a trained ManuVision body therapist, I find these educations complement each other with important knowledge and experience. It has given me a deeper understanding of the body and more options in my treatments.',
+      'At Klinik for Manuel Terapi I meet you not only as a set of symptoms, but as a whole person. Pain is complex. It is rarely just a signal of injury — it’s a personal experience where body, mind, and social factors interact.',
+      'Whether you are dealing with acute back problems, tension from stress, or complex chronic pain, I combine my educational background with the latest pain science to help you back to a life with more energy.',
+    ],
+    subsections: [
+      {
+        title: 'Whole-person body therapy',
+        body: 'As a trained ManuVision body therapist I work with the connection between body and mind, so we can release the tensions that sit deep in the system.',
+      },
+      {
+        title: 'Specialty in back and neck',
+        body: 'With continuing education in Columna therapy from Lasota Academy, I have the right tools for precise treatment of back and spine issues. I have completed the diploma from the European School of Osteopathy, which gives me deep anatomical understanding and advanced manual techniques. Because of Brexit-related conversion rules, the diploma does not allow me to be authorised as an osteopath in Denmark.',
+      },
+      {
+        title: 'Expertise in pain science',
+        body: 'I am currently completing my Master’s in Pain Science and Interdisciplinary Pain Management at Aalborg University (2024–2026). I specialise in complex pain, including pain in cancer patients and the psychological effects of long-term pain conditions.',
+      },
+    ],
+    readMoreLabel: 'Read more about Omid',
+    backLabel: 'Back to the home page',
   },
   faq: {
     eyebrow: 'FAQ',

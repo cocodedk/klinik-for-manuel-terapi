@@ -1,0 +1,53 @@
+.about-page section { padding-block: var(--space-7); }
+.about-hero { padding-block-start: var(--space-9); }
+.about-hero__inner {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .about-hero__inner { grid-template-columns: 3fr 2fr; gap: var(--space-7); }
+}
+.about-hero__copy h1 {
+  letter-spacing: -.01em;
+  margin-block-start: var(--space-2);
+}
+.about-hero__copy .lead {
+  font-size: 1.125rem;
+  max-width: 32rem;
+  margin-block-start: var(--space-3);
+}
+.about-hero__photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  object-fit: cover;
+}
+.about-body {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 44rem;
+}
+.about-body h2 { margin-block-end: var(--space-2); }
+.about-education {
+  display: grid;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  font-variant-numeric: tabular-nums;
+}
+.about-education li {
+  padding-block: var(--space-2);
+  border-block-end: 1px solid var(--line);
+}
+.about-sub h3 { margin-block-end: var(--space-2); }
+.about-sub p { color: var(--muted); }
+.read-more,
+.back-link {
+  font-weight: 600;
+  color: var(--brand);
+  text-decoration: none;
+}
+.read-more:hover,
+.back-link:hover { text-decoration: underline; }

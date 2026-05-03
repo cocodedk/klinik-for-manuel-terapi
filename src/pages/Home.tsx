@@ -1,4 +1,5 @@
 import type { RefObject } from 'react';
+import { Link } from 'react-router-dom';
 import type { Content } from '../content/types';
 import HeroCard from '../components/HeroCard';
 import Treatments from '../components/Treatments';
@@ -20,6 +21,11 @@ function AboutBlock({ t }: { t: Content }) {
       {body.map((para, i) => (
         <p key={i}>{para}</p>
       ))}
+      <p>
+        <Link className="read-more" to={t.aboutPage.path}>
+          {t.aboutPage.readMoreLabel} →
+        </Link>
+      </p>
     </>
   );
 }

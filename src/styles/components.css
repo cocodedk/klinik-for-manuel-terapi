@@ -70,19 +70,6 @@
   gap: var(--space-4);
   text-align: center;
 }
-.hero-card .deco {
-  position: absolute;
-  top: -1.4rem;
-  inset-inline-start: -.25rem;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: clamp(3rem, 14vw, 5.5rem);
-  color: var(--brand);
-  opacity: .18;
-  transform: rotate(-3deg);
-  pointer-events: none;
-  user-select: none;
-}
 .hero-card h1 { letter-spacing: -.01em; }
 .hero-card p.lead {
   font-size: 1.125rem;

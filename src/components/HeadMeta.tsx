@@ -3,6 +3,9 @@ import type { Content } from '../content/types';
 
 interface HeadMetaProps {
   t: Content;
+  title?: string;
+  description?: string;
+  ogImage?: string;
 }
 
 const SITE_URL = 'https://cocodedk.github.io/klinik-for-manuel-terapi';
@@ -46,15 +49,19 @@ function setMeta(attr: string, value: string, attrName = 'name') {
   if (el.content !== value) el.content = value;
 }
 
-export default function HeadMeta({ t }: HeadMetaProps) {
+export default function HeadMeta({ t, title, description, ogImage }: HeadMetaProps) {
   useEffect(() => {
-    if (document.title !== t.title) document.title = t.title;
-    setMeta('description', t.description);
-    setMeta('og:title', t.title, 'property');
-    setMeta('og:description', t.description, 'property');
+    const t1 = title ?? t.title;
+    const d1 = description ?? t.description;
+    const og = SITE_URL + (ogImage ?? t.ogImage);
+
+    if (document.title !== t1) document.title = t1;
+    setMeta('description', d1);
+    setMeta('og:title', t1, 'property');
+    setMeta('og:description', d1, 'property');
     setMeta('og:type', 'website', 'property');
     setMeta('og:url', window.location.href, 'property');
-    setMeta('og:image', SITE_URL + t.ogImage, 'property');
+    setMeta('og:image', og, 'property');
 
     let ld = document.getElementById('ld-json') as HTMLScriptElement | null;
     if (!ld) {
@@ -64,7 +71,7 @@ export default function HeadMeta({ t }: HeadMetaProps) {
       document.head.appendChild(ld);
     }
     if (ld.textContent !== LD_JSON) ld.textContent = LD_JSON;
-  }, [t]);
+  }, [t, title, description, ogImage]);
 
   return null;
 }

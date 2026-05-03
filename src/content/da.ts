@@ -60,7 +60,6 @@ export const da: Content = {
   },
   hero: {
     eyebrow: 'Frederiksberg · Manuel terapi',
-    deco: 'Bevægelse',
     h1: 'Klinik for Manuel Terapi – Frederiksberg C',
     lead: 'Effektiv behandling der hjælper dig af med spændinger, låste led og smerter i kroppen.',
     perks: ['Åbent til kl. 20', 'Gavekort'],
@@ -102,6 +101,45 @@ export const da: Content = {
       photographerHref: 'https://unsplash.com/@heftiba',
       suffix: 'på Unsplash · © 2026',
     },
+  },
+  aboutPage: {
+    path: '/om-mig',
+    title: 'Om mig | Omid Hodabakhshi · Klinik for Manuel Terapi',
+    description:
+      'Omid Hodabakhshi · uddannelser, tilgang og specialer. Manuel terapi, kropsterapi og smertevidenskab i Frederiksberg.',
+    h1: 'Omid Hodabakhshi',
+    intro:
+      'Jeg tilbyder behandling af problemstillinger i hele rygsøjlen, fra nakken til halebenet.',
+    imageAlt: 'Omid Hodabakhshi i klinikken',
+    educationLabel: 'Mine uddannelser',
+    education: [
+      '2007–2009: ManuVision Kropsterapeut',
+      '2014–2016: Lægeeksamineret rygterapeut',
+      '2017–2021: European School of Osteopathy (ikke autoriseret)',
+      '2021–2022: ManuVisions efteruddannelse i Chok/Traume',
+      '2024–2026: Master i Smertevidenskab og Tværfaglig Smertebehandling, Aalborg Universitet (forventes 2026)',
+    ],
+    body: [
+      'Som uddannet kropsterapeut fra ManuVision er det min erfaring, at uddannelserne supplerer hinanden med vigtig viden og erfaring. Det har givet mig en dybere forståelse af kroppen og flere muligheder i mine behandlinger.',
+      'Hos Klinik for Manuel Terapi møder jeg dig ikke kun som et sæt symptomer, men som et helt menneske. Smerte er komplekst. Det er sjældent blot et signal om en skade, men en personlig oplevelse, hvor krop, psyke og sociale faktorer spiller sammen.',
+      'Uanset om du kæmper med akutte rygproblemer, spændinger efter stress eller komplekse, kroniske smerter, kombinerer jeg min uddannelsesbaggrund med den nyeste smertevidenskab for at hjælpe dig tilbage til et liv med mere overskud.',
+    ],
+    subsections: [
+      {
+        title: 'Helhedsorienteret kropsterapi',
+        body: 'Som uddannet ManuVision kropsterapeut arbejder jeg med forbindelsen mellem krop og sind, så vi får løsnet op for de spændinger, der sidder dybt i systemet.',
+      },
+      {
+        title: 'Speciale i ryg og nakke',
+        body: 'Med en efteruddannelse i Columnaterapi fra Lasota Academy har jeg de rette værktøjer til præcis behandling af ryg- og søjleproblematikker. Jeg har gennemført diplomuddannelsen fra European School of Osteopathy, hvilket giver mig en dyb anatomisk forståelse og avancerede manuelle teknikker. På grund af Brexit-relaterede konverteringsregler giver diplomet ikke mulighed for autorisation som osteopat i Danmark.',
+      },
+      {
+        title: 'Ekspertise i smertevidenskab',
+        body: 'Jeg er i gang med min Master i Smertevidenskab og Tværfaglig Smertebehandling ved Aalborg Universitet (2024–2026). Her specialiserer jeg mig i komplekse smerter, herunder smerte hos kræftpatienter og de psykologiske effekter af langvarige smerteforløb.',
+      },
+    ],
+    readMoreLabel: 'Læs mere om Omid',
+    backLabel: 'Tilbage til forsiden',
   },
   faq: {
     eyebrow: 'Spørgsmål',

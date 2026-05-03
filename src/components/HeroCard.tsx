@@ -10,7 +10,6 @@ export default function HeroCard({ t }: HeroCardProps) {
   const { hero, rating, cta } = t;
   return (
     <div className="hero-card">
-      <span className="deco" aria-hidden>{hero.deco}</span>
       <p className="eyebrow">{hero.eyebrow}</p>
       <h1>{hero.h1}</h1>
       <p className="lead">{hero.lead}</p>
