@@ -24,26 +24,32 @@ const treatments: TreatmentItem[] = [
   {
     title: 'Spændinger og stive muskler.',
     body: 'Nakke, skuldre, ryg.',
+    conditionSlug: '/nakkesmerter',
   },
   {
     title: 'Låste led.',
     body: 'Manuel mobilisering af ryg og bækken.',
+    conditionSlug: '/laaste-led',
   },
   {
     title: 'Smerter i bevægeapparatet.',
     body: 'Knæ, hofte, albue.',
+    conditionSlug: '/smerter-i-bevaegelse',
   },
   {
     title: 'Hovedpine af spændingstype.',
     body: 'Kæbe, nakke, øvre ryg.',
+    conditionSlug: '/spaendingshovedpine',
   },
   {
     title: 'Genoptræning, kropsbevidsthed.',
     body: 'Øvelser at tage med hjem.',
+    conditionSlug: '/genoptraening',
   },
   {
     title: 'Idrætsskader.',
     body: 'Vurdering og en plan.',
+    conditionSlug: '/idraetsskader',
   },
 ];
 

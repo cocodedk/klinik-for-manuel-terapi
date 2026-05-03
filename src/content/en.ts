@@ -24,26 +24,32 @@ const treatments: TreatmentItem[] = [
   {
     title: 'Tension and stiff muscles.',
     body: 'Neck, shoulders, back.',
+    conditionSlug: '/en/neck-pain',
   },
   {
     title: 'Locked joints.',
     body: 'Manual mobilisation of the back and pelvis.',
+    conditionSlug: '/en/locked-joints',
   },
   {
     title: 'Musculoskeletal pain.',
     body: 'Knee, hip, elbow.',
+    conditionSlug: '/en/musculoskeletal-pain',
   },
   {
     title: 'Tension-type headache.',
     body: 'Jaw, neck, upper back.',
+    conditionSlug: '/en/tension-headache',
   },
   {
     title: 'Rehab and body awareness.',
     body: 'Exercises to take home.',
+    conditionSlug: '/en/rehabilitation',
   },
   {
     title: 'Sports injuries.',
     body: 'Assessment and a plan.',
+    conditionSlug: '/en/sports-injuries',
   },
 ];
 

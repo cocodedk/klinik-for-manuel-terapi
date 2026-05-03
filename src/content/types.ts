@@ -39,6 +39,7 @@ export interface AboutBlock {
 export interface TreatmentItem {
   title: string;
   body: string;
+  conditionSlug?: string;
 }
 
 export interface TreatmentsBlock {
@@ -92,6 +93,18 @@ export interface FaqBlock {
   eyebrow: string;
   h2: string;
   items: FaqItem[];
+}
+
+export interface ConditionBlock {
+  slug: string;
+  altSlug: string;
+  title: string;
+  description: string;
+  h1: string;
+  intro: string;
+  body: string[];
+  backLabel: string;
+  homeHref: string;
 }
 
 export interface AboutPageSubsection {

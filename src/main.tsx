@@ -2,6 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import App from './App';
+import { daConditions } from './content/conditions/da';
+import { enConditions } from './content/conditions/en';
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/layout.css';
@@ -15,6 +17,14 @@ const router = createBrowserRouter(
     { path: '/en/', element: <App lang="en" page="home" /> },
     { path: '/om-mig', element: <App lang="da" page="about" /> },
     { path: '/en/about-me', element: <App lang="en" page="about" /> },
+    ...daConditions.map((c) => ({
+      path: c.slug,
+      element: <App lang="da" page="condition" condition={c} />,
+    })),
+    ...enConditions.map((c) => ({
+      path: c.slug,
+      element: <App lang="en" page="condition" condition={c} />,
+    })),
   ],
   { basename: '/klinik-for-manuel-terapi' },
 );

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/index.html dist/404.html && mkdir -p dist/en dist/om-mig dist/en/about-me && cp dist/index.html dist/en/index.html && cp dist/index.html dist/om-mig/index.html && cp dist/index.html dist/en/about-me/index.html",
+    "build": "vite build && cp dist/index.html dist/404.html && for p in en om-mig en/about-me nakkesmerter laaste-led smerter-i-bevaegelse spaendingshovedpine genoptraening idraetsskader en/neck-pain en/locked-joints en/musculoskeletal-pain en/tension-headache en/rehabilitation en/sports-injuries; do mkdir -p dist/$p && cp dist/index.html dist/$p/index.html; done",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },

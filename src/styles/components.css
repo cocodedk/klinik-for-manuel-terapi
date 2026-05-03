@@ -148,6 +148,31 @@
   font-size: var(--fs-h3);
   margin-block-end: var(--space-1);
 }
+.treatments .treatment-link {
+  display: block;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  padding-inline-end: var(--space-5);
+}
+.treatments .treatment-link::after {
+  content: '→';
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  color: var(--brand);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  line-height: 1;
+  transition: transform .18s ease;
+}
+.treatments .treatment-link:hover::after,
+.treatments .treatment-link:focus-visible::after {
+  transform: translateX(3px);
+}
+.treatments .treatment-link p {
+  margin: 0;
+}
 
 /* Practical address */
 .practical-address p { font-weight: 600; }
