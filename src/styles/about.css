@@ -1,4 +1,7 @@
 .about-page section { padding-block: var(--space-7); }
+@media (min-width: 768px) {
+  .about-page section { padding-block: var(--space-8); }
+}
 .about-hero { padding-block-start: var(--space-9); }
 .about-hero__inner {
   display: grid;

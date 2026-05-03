@@ -90,6 +90,8 @@ export interface AboutPageSubsection {
 
 export interface AboutPageBlock {
   path: string;
+  homeHref: string;
+  ogImage: string;
   title: string;
   description: string;
   h1: string;

@@ -23,6 +23,7 @@ export default function About({ t }: AboutProps) {
             width="576"
             height="683"
             loading="eager"
+            fetchPriority="high"
           />
         </div>
       </section>
@@ -55,7 +56,7 @@ export default function About({ t }: AboutProps) {
       </section>
       <section>
         <div className="container about-body">
-          <Link className="back-link" to="/">
+          <Link className="back-link" to={aboutPage.homeHref}>
             ← {aboutPage.backLabel}
           </Link>
         </div>

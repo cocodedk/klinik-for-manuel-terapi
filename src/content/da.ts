@@ -104,6 +104,8 @@ export const da: Content = {
   },
   aboutPage: {
     path: '/om-mig',
+    homeHref: '/',
+    ogImage: '/img/omid.jpg',
     title: 'Om mig | Omid Hodabakhshi · Klinik for Manuel Terapi',
     description:
       'Omid Hodabakhshi · uddannelser, tilgang og specialer. Manuel terapi, kropsterapi og smertevidenskab i Frederiksberg.',

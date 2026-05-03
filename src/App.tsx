@@ -16,17 +16,15 @@ interface AppProps {
   page: Page;
 }
 
+const hl = (da: string, en: string): [string, string][] => [
+  ['da', da],
+  ['en', en],
+  ['x-default', da],
+];
+
 const HREFLANGS: Record<Page, [string, string][]> = {
-  home: [
-    ['da', '/'],
-    ['en', '/en/'],
-    ['x-default', '/'],
-  ],
-  about: [
-    ['da', '/om-mig'],
-    ['en', '/en/about-me'],
-    ['x-default', '/om-mig'],
-  ],
+  home: hl('/', '/en/'),
+  about: hl('/om-mig', '/en/about-me'),
 };
 
 export default function App({ lang, page }: AppProps) {
@@ -36,7 +34,7 @@ export default function App({ lang, page }: AppProps) {
   const isAbout = page === 'about';
   const headTitle = isAbout ? t.aboutPage.title : undefined;
   const headDesc = isAbout ? t.aboutPage.description : undefined;
-  const headOg = isAbout ? '/img/omid.jpg' : undefined;
+  const headOg = isAbout ? t.aboutPage.ogImage : undefined;
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -64,7 +62,7 @@ export default function App({ lang, page }: AppProps) {
         {isAbout ? <About t={t} /> : <Home t={t} heroRef={heroRef} />}
       </main>
       <SiteFooter t={t} footerRef={footerRef} />
-      <Fab cta={t.cta} heroRef={heroRef} footerRef={footerRef} />
+      {!isAbout && <Fab cta={t.cta} heroRef={heroRef} footerRef={footerRef} />}
     </>
   );
 }
