@@ -14,7 +14,7 @@ gradient tokens removed.
 --bg:        hsl(36 30% 96%);   /* warm cream page background */
 --surface:   hsl(0  0% 100%);   /* card / panel */
 --ink:       hsl(150 20% 15%);  /* primary text */
---muted:     hsl(150 10% 40%);  /* secondary text */
+--muted:     hsl(150 12% 32%);  /* secondary text — WCAG AA on --soft */
 --soft:      hsl(36 25% 90%);   /* alt section bg */
 --line:      hsl(36 20% 85%);   /* hairline borders */
 --brand:     hsl(155 28% 32%);  /* forest green */

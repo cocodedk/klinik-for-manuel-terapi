@@ -3,7 +3,7 @@
   --bg: hsl(36 30% 96%);
   --surface: hsl(0 0% 100%);
   --ink: hsl(150 20% 15%);
-  --muted: hsl(150 10% 40%);
+  --muted: hsl(150 12% 32%);     /* WCAG AA on --soft (4.3 → 5.6) */
   --soft: hsl(36 25% 90%);
   --line: hsl(36 20% 85%);
   --brand: hsl(155 28% 32%);

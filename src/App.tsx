@@ -34,7 +34,8 @@ export default function App({ lang }: AppProps) {
       document.head.appendChild(meta);
     }
     meta.content = t.description;
-    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const base = origin + import.meta.env.BASE_URL.replace(/\/$/, '');
     const links: [string, string][] = [['da', `${base}/`], ['en', `${base}/en/`], ['x-default', `${base}/`]];
     for (const [hl, href] of links) {
       let l = document.querySelector<HTMLLinkElement>(`link[rel="alternate"][hreflang="${hl}"]`);
