@@ -26,19 +26,21 @@ const hl = (da: string, en: string): [string, string][] => [
   ['x-default', da],
 ];
 
-const STATIC_HREFLANGS: Record<'home' | 'about', [string, string][]> = {
-  home: hl('/', '/en/'),
-  about: hl('/om-mig', '/en/about-me'),
-};
-
-function getHreflangs(page: Page, condition?: ConditionBlock): [string, string][] {
+function getLangPair(page: Page, condition?: ConditionBlock): { da: string; en: string } {
   if (page === 'condition' && condition) {
     const isEn = condition.slug.startsWith('/en/');
-    const da = isEn ? condition.altSlug : condition.slug;
-    const en = isEn ? condition.slug : condition.altSlug;
-    return hl(da, en);
+    return {
+      da: isEn ? condition.altSlug : condition.slug,
+      en: isEn ? condition.slug : condition.altSlug,
+    };
   }
-  return STATIC_HREFLANGS[page === 'about' ? 'about' : 'home'];
+  if (page === 'about') return { da: '/om-mig', en: '/en/about-me' };
+  return { da: '/', en: '/en/' };
+}
+
+function getHreflangs(page: Page, condition?: ConditionBlock): [string, string][] {
+  const { da, en } = getLangPair(page, condition);
+  return hl(da, en);
 }
 
 export default function App({ lang, page, condition }: AppProps) {
@@ -59,6 +61,7 @@ export default function App({ lang, page, condition }: AppProps) {
       ? condition.description
       : undefined;
   const headOg = isAbout ? t.aboutPage.ogImage : undefined;
+  const { da: daHref, en: enHref } = getLangPair(page, condition);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -82,7 +85,7 @@ export default function App({ lang, page, condition }: AppProps) {
       <ScrollRestoration />
       <a id="top" />
       <div className="parallax" aria-hidden />
-      <SiteHeader t={t} />
+      <SiteHeader t={t} daHref={daHref} enHref={enHref} />
       <main>
         {isAbout && <About t={t} />}
         {isCondition && condition && <ConditionPage condition={condition} t={t} />}
