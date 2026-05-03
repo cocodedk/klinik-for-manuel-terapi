@@ -26,16 +26,12 @@ export default function ConditionPage({ condition, t }: ConditionPageProps) {
             <p key={para}>{para}</p>
           ))}
         </div>
+        <Link className="back-link" to={condition.homeHref}>
+          ← {condition.backLabel}
+        </Link>
       </Section>
       <Section id="contact">
         <ContactRow t={t} />
-      </Section>
-      <Section alt>
-        <div className="about-body">
-          <Link className="back-link" to={condition.homeHref}>
-            ← {condition.backLabel}
-          </Link>
-        </div>
       </Section>
     </article>
   );
