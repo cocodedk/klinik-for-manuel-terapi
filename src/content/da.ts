@@ -61,6 +61,7 @@ export const da: Content = {
   ogImage: '/img/og.jpg',
   rating: {
     value: '4.9',
+    count: 50,
     label: 'Vurdering på Google Maps',
     href: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
   },

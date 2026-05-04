@@ -17,7 +17,8 @@ export interface HoursRow {
 }
 
 export interface RatingChip {
-  value: '4.9';
+  value: string;
+  count: number;
   label: string;
   href: string;
 }
