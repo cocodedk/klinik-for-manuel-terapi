@@ -132,7 +132,7 @@ export interface AboutPageBlock {
 
 export interface ReviewItem {
   author: string;
-  date: string;
+  source: string;
   text: string;
 }
 

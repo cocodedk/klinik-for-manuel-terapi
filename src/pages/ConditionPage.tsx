@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import type { ConditionBlock, Content } from '../content/types';
 import Section from '../components/Section';
 import ContactRow from '../components/ContactRow';
+import BackLink from '../components/BackLink';
 
 export interface ConditionPageProps {
   condition: ConditionBlock;
@@ -26,9 +26,7 @@ export default function ConditionPage({ condition, t }: ConditionPageProps) {
             <p key={para}>{para}</p>
           ))}
         </div>
-        <Link className="back-link" to={condition.homeHref}>
-          ← {condition.backLabel}
-        </Link>
+        <BackLink href={condition.homeHref} label={condition.backLabel} />
       </Section>
       <Section id="contact">
         <ContactRow t={t} />

@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
 import type { Content } from '../content/types';
 import Section from '../components/Section';
+import BackLink from '../components/BackLink';
 
 export interface AboutProps {
   t: Content;
@@ -61,9 +61,7 @@ export default function About({ t }: AboutProps) {
       </Section>
       <Section>
         <div className="about-body">
-          <Link className="back-link" to={aboutPage.homeHref}>
-            ← {aboutPage.backLabel}
-          </Link>
+          <BackLink href={aboutPage.homeHref} label={aboutPage.backLabel} />
         </div>
       </Section>
     </article>

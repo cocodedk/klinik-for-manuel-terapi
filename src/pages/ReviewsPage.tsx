@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
-import type { Content, ReviewItem } from '../content/types';
+import type { Content } from '../content/types';
+import { googleReviews } from '../content/reviews';
 import Section from '../components/Section';
+import BackLink from '../components/BackLink';
 
 export interface ReviewsPageProps {
   t: Content;
-  reviews: ReviewItem[];
 }
 
-export default function ReviewsPage({ t, reviews }: ReviewsPageProps) {
+export default function ReviewsPage({ t }: ReviewsPageProps) {
   const { reviewsPage } = t;
   return (
     <article className="reviews-page">
@@ -17,23 +17,21 @@ export default function ReviewsPage({ t, reviews }: ReviewsPageProps) {
       </Section>
       <Section alt>
         <ul className="reviews-grid" role="list">
-          {reviews.map((r) => (
-            <li key={r.author} className="review-card">
+          {googleReviews.map((r, i) => (
+            <li key={i} className="review-card">
               <blockquote className="review-card__quote">
                 <p>{r.text}</p>
               </blockquote>
               <footer className="review-card__footer">
                 <span className="review-card__author">{r.author}</span>
-                <span className="review-card__source">{r.date}</span>
+                <span className="review-card__source">{r.source}</span>
               </footer>
             </li>
           ))}
         </ul>
       </Section>
       <Section>
-        <Link className="back-link" to={reviewsPage.homeHref}>
-          ← {reviewsPage.backLabel}
-        </Link>
+        <BackLink href={reviewsPage.homeHref} label={reviewsPage.backLabel} />
       </Section>
     </article>
   );

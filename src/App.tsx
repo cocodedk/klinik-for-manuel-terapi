@@ -2,8 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ScrollRestoration } from 'react-router-dom';
 import { da } from './content/da';
 import { en } from './content/en';
-import { googleReviews } from './content/reviews';
-import type { ConditionBlock } from './content/types';
+import type { ConditionBlock, Content } from './content/types';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import { Fab } from './components/Fab';
@@ -46,29 +45,24 @@ function getHreflangs(page: Page, condition?: ConditionBlock): [string, string][
   return hl(da, en);
 }
 
+function getHeadMeta(
+  page: Page,
+  t: Content,
+  condition?: ConditionBlock,
+): { title: string | undefined; desc: string | undefined } {
+  if (page === 'about') return { title: t.aboutPage.title, desc: t.aboutPage.description };
+  if (page === 'reviews') return { title: t.reviewsPage.title, desc: t.reviewsPage.description };
+  if (page === 'condition' && condition) return { title: condition.title, desc: condition.description };
+  return { title: undefined, desc: undefined };
+}
+
 export default function App({ lang, page, condition }: AppProps) {
   const t = lang === 'da' ? da : en;
   const heroRef = useRef<HTMLElement>(null);
   const footerRef = useRef<HTMLElement>(null);
   const isHome = page === 'home';
-  const isAbout = page === 'about';
-  const isCondition = page === 'condition';
-  const isReviews = page === 'reviews';
-  const headTitle = isAbout
-    ? t.aboutPage.title
-    : isCondition && condition
-      ? condition.title
-      : isReviews
-        ? t.reviewsPage.title
-        : undefined;
-  const headDesc = isAbout
-    ? t.aboutPage.description
-    : isCondition && condition
-      ? condition.description
-      : isReviews
-        ? t.reviewsPage.description
-        : undefined;
-  const headOg = isAbout ? t.aboutPage.ogImage : undefined;
+  const { title: headTitle, desc: headDesc } = getHeadMeta(page, t, condition);
+  const headOg = page === 'about' ? t.aboutPage.ogImage : undefined;
   const { da: daHref, en: enHref } = getLangPair(page, condition);
 
   useEffect(() => {
@@ -95,10 +89,10 @@ export default function App({ lang, page, condition }: AppProps) {
       <div className="parallax" aria-hidden />
       <SiteHeader t={t} daHref={daHref} enHref={enHref} />
       <main>
-        {isAbout && <About t={t} />}
-        {isCondition && condition && <ConditionPage condition={condition} t={t} />}
-        {isHome && <Home t={t} heroRef={heroRef} />}
-        {isReviews && <ReviewsPage t={t} reviews={googleReviews} />}
+        {page === 'about' && <About t={t} />}
+        {page === 'condition' && condition && <ConditionPage condition={condition} t={t} />}
+        {page === 'home' && <Home t={t} heroRef={heroRef} />}
+        {page === 'reviews' && <ReviewsPage t={t} />}
       </main>
       <SiteFooter t={t} footerRef={footerRef} />
       {isHome && <Fab cta={t.cta} heroRef={heroRef} footerRef={footerRef} />}
