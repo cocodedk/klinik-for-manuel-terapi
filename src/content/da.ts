@@ -155,6 +155,15 @@ export const da: Content = {
     readMoreLabel: 'Læs mere om Omid',
     backLabel: 'Tilbage til forsiden',
   },
+  reviewsPage: {
+    path: '/anmeldelser',
+    homeHref: '/',
+    title: 'Anmeldelser | Klinik for Manuel Terapi',
+    description: 'Hvad patienter siger om Klinik for Manuel Terapi på Frederiksberg. Læs ægte Google-anmeldelser.',
+    h1: 'Hvad patienterne siger',
+    lead: 'Anmeldelser fra Google — i patienternes egne ord.',
+    backLabel: 'Tilbage til forsiden',
+  },
   faq: {
     eyebrow: 'Spørgsmål',
     h2: 'Ofte stillede spørgsmål',

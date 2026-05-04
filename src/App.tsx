@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ScrollRestoration } from 'react-router-dom';
 import { da } from './content/da';
 import { en } from './content/en';
+import { googleReviews } from './content/reviews';
 import type { ConditionBlock } from './content/types';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
@@ -10,9 +11,10 @@ import HeadMeta from './components/HeadMeta';
 import Home from './pages/Home';
 import About from './pages/About';
 import ConditionPage from './pages/ConditionPage';
+import ReviewsPage from './pages/ReviewsPage';
 
 type Lang = 'da' | 'en';
-type Page = 'home' | 'about' | 'condition';
+type Page = 'home' | 'about' | 'condition' | 'reviews';
 
 interface AppProps {
   lang: Lang;
@@ -35,6 +37,7 @@ function getLangPair(page: Page, condition?: ConditionBlock): { da: string; en: 
     };
   }
   if (page === 'about') return { da: '/om-mig', en: '/en/about-me' };
+  if (page === 'reviews') return { da: '/anmeldelser', en: '/en/reviews' };
   return { da: '/', en: '/en/' };
 }
 
@@ -50,16 +53,21 @@ export default function App({ lang, page, condition }: AppProps) {
   const isHome = page === 'home';
   const isAbout = page === 'about';
   const isCondition = page === 'condition';
+  const isReviews = page === 'reviews';
   const headTitle = isAbout
     ? t.aboutPage.title
     : isCondition && condition
       ? condition.title
-      : undefined;
+      : isReviews
+        ? t.reviewsPage.title
+        : undefined;
   const headDesc = isAbout
     ? t.aboutPage.description
     : isCondition && condition
       ? condition.description
-      : undefined;
+      : isReviews
+        ? t.reviewsPage.description
+        : undefined;
   const headOg = isAbout ? t.aboutPage.ogImage : undefined;
   const { da: daHref, en: enHref } = getLangPair(page, condition);
 
@@ -90,6 +98,7 @@ export default function App({ lang, page, condition }: AppProps) {
         {isAbout && <About t={t} />}
         {isCondition && condition && <ConditionPage condition={condition} t={t} />}
         {isHome && <Home t={t} heroRef={heroRef} />}
+        {isReviews && <ReviewsPage t={t} reviews={googleReviews} />}
       </main>
       <SiteFooter t={t} footerRef={footerRef} />
       {isHome && <Fab cta={t.cta} heroRef={heroRef} footerRef={footerRef} />}

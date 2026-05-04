@@ -130,6 +130,22 @@ export interface AboutPageBlock {
   backLabel: string;
 }
 
+export interface ReviewItem {
+  author: string;
+  date: string;
+  text: string;
+}
+
+export interface ReviewsPageBlock {
+  path: string;
+  homeHref: string;
+  title: string;
+  description: string;
+  h1: string;
+  lead: string;
+  backLabel: string;
+}
+
 export interface Content {
   langCode: LangCode;
   title: string;
@@ -144,5 +160,6 @@ export interface Content {
   footer: FooterBlock;
   faq: FaqBlock;
   aboutPage: AboutPageBlock;
+  reviewsPage: ReviewsPageBlock;
   cta: CtaTriple;
 }

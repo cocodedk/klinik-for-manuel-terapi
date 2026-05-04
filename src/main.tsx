@@ -10,6 +10,7 @@ import './styles/layout.css';
 import './styles/components.css';
 import './styles/about.css';
 import './styles/fab.css';
+import './styles/reviews.css';
 
 const router = createBrowserRouter(
   [
@@ -17,6 +18,8 @@ const router = createBrowserRouter(
     { path: '/en/', element: <App lang="en" page="home" /> },
     { path: '/om-mig', element: <App lang="da" page="about" /> },
     { path: '/en/about-me', element: <App lang="en" page="about" /> },
+    { path: '/anmeldelser', element: <App lang="da" page="reviews" /> },
+    { path: '/en/reviews', element: <App lang="en" page="reviews" /> },
     ...daConditions.map((c) => ({
       path: c.slug,
       element: <App lang="da" page="condition" condition={c} />,
