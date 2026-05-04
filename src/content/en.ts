@@ -63,7 +63,7 @@ export const en: Content = {
     value: '4.9',
     count: 50,
     label: 'Rated on Google Maps',
-    href: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
+    href: '/en/reviews',
   },
   hero: {
     h1: 'Klinik for Manuel Terapi',
@@ -159,9 +159,12 @@ export const en: Content = {
     path: '/en/reviews',
     homeHref: '/en/',
     title: 'Reviews | Klinik for Manuel Terapi',
-    description: 'What patients say about Klinik for Manuel Terapi in Frederiksberg. Read genuine Google reviews.',
+    description:
+      'What patients say about Klinik for Manuel Terapi in Frederiksberg. Read genuine Google reviews.',
     h1: 'What patients say',
-    lead: "Reviews from Google — in patients’ own words.",
+    lead: "Reviews from Google — in patients' own words.",
+    googleHref: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
+    googleLabel: 'See all reviews on Google',
     backLabel: 'Back to the home page',
   },
   faq: {

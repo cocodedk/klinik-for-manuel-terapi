@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import type { Content } from '../content/types';
 
 export interface RatingChipProps {
@@ -6,15 +7,10 @@ export interface RatingChipProps {
 
 export default function RatingChip({ rating }: RatingChipProps) {
   return (
-    <a
-      className="rating"
-      href={rating.href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link className="rating" to={rating.href}>
       <span className="star" aria-hidden>★</span>
       <span className="score">{rating.value}</span>
       <span className="label">· {rating.label}</span>
-    </a>
+    </Link>
   );
 }

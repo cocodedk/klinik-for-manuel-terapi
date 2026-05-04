@@ -63,7 +63,7 @@ export const da: Content = {
     value: '4.9',
     count: 50,
     label: 'Vurdering på Google Maps',
-    href: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
+    href: '/anmeldelser',
   },
   hero: {
     h1: 'Klinik for Manuel Terapi',
@@ -162,6 +162,8 @@ export const da: Content = {
     description: 'Hvad patienter siger om Klinik for Manuel Terapi på Frederiksberg. Læs ægte Google-anmeldelser.',
     h1: 'Hvad patienterne siger',
     lead: 'Anmeldelser fra Google — i patienternes egne ord.',
+    googleHref: 'https://maps.app.goo.gl/FAbmVBvtPQbczbQB8',
+    googleLabel: 'Se alle anmeldelser på Google',
     backLabel: 'Tilbage til forsiden',
   },
   faq: {

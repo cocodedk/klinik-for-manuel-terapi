@@ -59,3 +59,17 @@
   text-transform: uppercase;
   letter-spacing: .06em;
 }
+.reviews-google-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--brand);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  text-decoration: none;
+  margin-block-end: var(--space-4);
+}
+.reviews-google-link:hover,
+.reviews-google-link:focus-visible {
+  text-decoration: underline;
+}

@@ -31,6 +31,14 @@ export default function ReviewsPage({ t }: ReviewsPageProps) {
         </ul>
       </Section>
       <Section>
+        <a
+          className="reviews-google-link"
+          href={reviewsPage.googleHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {reviewsPage.googleLabel} ↗
+        </a>
         <BackLink href={reviewsPage.homeHref} label={reviewsPage.backLabel} />
       </Section>
     </article>

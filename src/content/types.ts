@@ -143,6 +143,8 @@ export interface ReviewsPageBlock {
   description: string;
   h1: string;
   lead: string;
+  googleHref: string;
+  googleLabel: string;
   backLabel: string;
 }
 
